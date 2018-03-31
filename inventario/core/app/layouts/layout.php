@@ -119,7 +119,7 @@
               <a href="#"><i class='fa fa-usd'></i> <span>Vender</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=sell">Productos</a></li>
-                <li><a href="./?view=sell">Productos1</a></li>
+                <li><a href="./?view=sell1">Productos1</a></li>
                 <li><a href="./?view=services">Servicios</a></li>
 
               </ul>
@@ -129,6 +129,18 @@
 
             <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
             <li><a href="./?view=box"><i class='fa fa-cube'></i> <span>Caja</span></a></li>
+
+            <li class="treeview">
+              <a href="#"><i class='fa fa-glass'></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="./?view=products">Ver Lista de Productos</a></li>
+                <li><a href="./?view=newproduct">Agregar Nuevo</a></li>
+                <li><a href="./?view=re">Agregar Existencia</a></li>
+
+              </ul>
+            </li>
+
+
             <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
 
             <li class="treeview">
