@@ -4,8 +4,92 @@
 	<br>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=addprovider" role="form">
 
+			<div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="" class="control-label">Tipo Identificación</label>
+                        <select name="tipoidentificacion" class="form-control selectpicker" required>
+                            <option value="1">Cedúla</option>
+                            <option value="2">RUC</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Identificación</label>
+                        <input name="identificacion" type="text" class="form-control" maxlength="13" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Nombres</label>
+                        <input name="nombres" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Teléfono</label>
+                                <input name="telefono" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Celular</label>
+                                <input name="celular" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Empresa</label>
+                                <input name="empresa" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Producto</label>
+                                <input name="producto" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Factura</label>
+                                <input name="producto" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Cod. Producto</label>
+                                <input name="producto" type="text" class="form-control" maxlength="10">
+                            </div>
+                        </div> -->
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="" class="control-label">Email</label>
+                        <input name="email" type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Dirección</label>
+                        <textarea name="direccion" cols="30" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <button type="reset" class="btn btn-danger">
+                            <i class="fa fa-reply"></i> Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i> Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+  <!-- <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
       <input type="text" name="name" class="form-control" id="name" placeholder="Nombre">
@@ -45,7 +129,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <button type="submit" class="btn btn-primary">Agregar Proveedor</button>
     </div>
-  </div>
+  </div> -->
 </form>
 	</div>
 </div>

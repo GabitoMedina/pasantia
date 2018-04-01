@@ -4,6 +4,7 @@ class PersonData {
 
 
 	public function PersonData(){
+		$this->identificacion = "";
 		$this->name = "";
 		$this->lastname = "";
 		$this->email = "";
