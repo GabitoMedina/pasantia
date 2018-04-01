@@ -26,11 +26,18 @@ class PersonData {
 	// }
 
 	public function add_provider(){
-		$sql = "insert into person (name,lastname,address1,email1,phone1,kind,created_at,company, product_id,product_barcode) ";
-		// nuevo campo
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address1\",\"$this->email1\",\"$this->phone1\",2,\"$this->created_at\",\"$this->company\",\"$this->product_id\",$this->product_barcode)";
+		$sql = "insert into person (name,lastname,address1,email1,phone1,kind,created_at) ";
+		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address1\",\"$this->email1\",\"$this->phone1\",2,$this->created_at)";
 		Executor::doit($sql);
 	}
+
+	// public function add_provider(){
+	// 	$sql = "insert into person (name,lastname,address1,email1,phone1,kind,created_at) ";
+	// 	// nuevo campo
+	// 	$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address1\",\"$this->email1\",\"$this->phone1\",2,\"$this->created_at)";
+	// 	// \"$this->company\",\"$this->product_id\",$this->product_barcode
+	// 	Executor::doit($sql);
+	// }
 
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";

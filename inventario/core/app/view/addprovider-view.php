@@ -8,10 +8,10 @@ if(count($_POST)>0){
 	$user->email1 = $_POST["email1"];
 	$user->phone1 = $_POST["phone1"];
 
-	$user->company = $_POST["company"];
-
-	$user->product_id = $_POST["product_id"];
-	$user->product_barcode = $_POST["product_barcode"];
+	// $user->company = $_POST["company"];
+	//
+	// $user->product_id = $_POST["product_id"];
+	// $user->product_barcode = $_POST["product_barcode"];
 
 	$user->add_provider();
 
