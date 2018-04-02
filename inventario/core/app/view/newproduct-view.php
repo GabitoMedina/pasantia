@@ -1,4 +1,4 @@
-    <?php 
+    <?php
 $categories = CategoryData::getAll();
     ?>
 <div class="row">
@@ -14,11 +14,22 @@ $categories = CategoryData::getAll();
     </div>
   </div>
   <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Factura/Nota Venta</label>
+    <div class="col-md-6">
+    <select name="category_id" class="form-control">
+    <option value="">Factura</option>
+    <option value="">Nota Venta</option>
+    <!-- <?php foreach($categories as $category):?>
+      <option value="<?php echo $category->id;?>"><?php echo $category->name;?></option>
+    <?php endforeach;?> -->
+      </select>    </div>
+  </div>
+  <!-- <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Codigo de Barras*</label>
     <div class="col-md-6">
       <input type="text" name="barcode" id="product_code" class="form-control" id="barcode" placeholder="Codigo de Barras del Producto">
     </div>
-  </div>
+  </div> -->
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">

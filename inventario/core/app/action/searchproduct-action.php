@@ -10,6 +10,7 @@ if(count($products)>0){
 		<th>Codigo</th>
 		<th>Nombre</th>
 		<th>Unidad</th>
+		<th>Descripción</th>
 		<th>Precio unitario</th>
 		<th>En inventario</th>
 		<th>Cantidad</th>
@@ -19,13 +20,14 @@ $products_in_cero=0;
 	 foreach($products as $product):
 $q= OperationData::getQYesF($product->id);
 	?>
-	<?php 
+	<?php
 	if($q>0):?>
-		
+
 	<tr class="<?php if($q<=$product->inventary_min){ echo "danger"; }?>">
 		<td style="width:80px;"><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
 		<td><?php echo $product->unit; ?></td>
+		<td><?php echo $product->description ; ?></td>
 		<td><b>$<?php echo $product->price_out; ?></b></td>
 		<td>
 			<?php echo $q; ?>
@@ -43,7 +45,7 @@ $q= OperationData::getQYesF($product->id);
 
 		</form></td>
 	</tr>
-	
+
 <?php else:$products_in_cero++;
 ?>
 <?php  endif; ?>
