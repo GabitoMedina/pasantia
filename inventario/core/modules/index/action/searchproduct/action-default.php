@@ -1,5 +1,5 @@
 
-<?php if(isset($_GET["product"]) && $_GET["product"]!=""):?>
+<!-- <?php if(isset($_GET["product"]) && $_GET["product"]!=""):?>
 	<?php
 $products = ProductData::getLike($_GET["product"]);
 if(count($products)>0){
@@ -19,9 +19,9 @@ $products_in_cero=0;
 	 foreach($products as $product):
 $q= OperationData::getQYesF($product->id);
 	?>
-	<?php 
+	<?php
 	if($q>0):?>
-		
+
 	<tr class="<?php if($q<=$product->inventary_min){ echo "danger"; }?>">
 		<td style="width:80px;"><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
@@ -43,7 +43,7 @@ $q= OperationData::getQYesF($product->id);
 
 		</form></td>
 	</tr>
-	
+
 <?php else:$products_in_cero++;
 ?>
 <?php  endif; ?>
@@ -59,4 +59,4 @@ $q= OperationData::getQYesF($product->id);
 <hr><br>
 <?php else:
 ?>
-<?php endif; ?>
+<?php endif; ?> -->

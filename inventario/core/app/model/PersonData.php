@@ -175,7 +175,9 @@ class PersonData {
 			$array[$cnt]->id = $r['id'];
 			$array[$cnt]->identificacion = $r['identificacion'];
 			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->mail = $r['mail'];
+			$array[$cnt]->address1 = $r['address1'];
+			$array[$cnt]->email1 = $r['email1'];
+			$array[$cnt]->phone1 = $r['phone1'];
 			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;
 		}

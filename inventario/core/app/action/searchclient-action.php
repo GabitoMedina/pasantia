@@ -1,7 +1,7 @@
 
 <?php if(isset($_GET["client"]) && $_GET["client"]!=""):?>
 	<?php
-$clients = clientData::getLike($_GET["client"]);
+$clients = PersonData::getLike($_GET["client"]);
 if(count($clients)>0){
 	?>
 <h3>Resultados de la Busqueda</h3>
@@ -25,20 +25,21 @@ $q= OperationData::getQYesF($client->id);
 	<tr class="<?php if($q<=$client->inventary_min){ echo "danger"; }?>">
 		<td style="width:80px;"><?php echo $client->id; ?></td>
 		<td><?php echo $client->name; ?></td>
-		<td><?php echo $client->unit; ?></td>
-		<td><b>$<?php echo $client->price_out; ?></b></td>
-		<td>
+		<td><?php echo $client->address1; ?></td>
+		<td><b>$<?php echo $client->email1; ?></b></td>
+    <td><b>$<?php echo $client->phone1; ?></b></td>
+		<!-- <td>
 			<?php echo $q; ?>
-		</td>
+		</td> -->
 		<td style="width:250px;"><form method="post" action="index.php?view=addtocart">
 		<input type="hidden" name="client_id" value="<?php echo $client->id; ?>">
 
-<div class="input-group">
+<!-- <div class="input-group">
 		<input type="" class="form-control" required name="q" placeholder="Cantidad ...">
       <span class="input-group-btn">
 		<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Agregar</button>
       </span>
-    </div>
+    </div> -->
 
 
 		</form></td>
