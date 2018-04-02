@@ -58,6 +58,25 @@ class ProductData {
 		return Model::one($query[0],new ProductData());
 
 	}
+	public static function getProducts(){
+		$sql = "select * from ".self::$tablename." where is_active=1 order by name";
+		$query = Executor::doit($sql);
+		$array = array();
+		$cnt = 0;
+		while($r = $query[0]->fetch_array()){
+			$array[$cnt] = new ProductData();
+			$array[$cnt]->id = $r['id'];
+			// $array[$cnt]->identificacion = $r['identificacion'];
+			$array[$cnt]->name = $r['name'];
+			// $array[$cnt]->lastname = $r['lastname'];
+			// $array[$cnt]->email1 = $r['email1'];
+			// $array[$cnt]->phone1 = $r['phone1'];
+			// $array[$cnt]->address1 = $r['address1'];
+			$array[$cnt]->created_at = $r['created_at'];
+			$cnt++;
+		}
+		return $array;
+	}
 
 
 
