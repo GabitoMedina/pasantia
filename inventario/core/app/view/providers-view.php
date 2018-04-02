@@ -22,20 +22,29 @@
 
 			<table class="table table-bordered table-hover">
 			<thead>
+			<th>CI o RUC</th>
 			<th>Nombre completo</th>
 			<th>Direccion</th>
+			<th>Empresa</th>
 			<th>Email</th>
 			<th>Telefono</th>
+			<th>celular</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
 				?>
 				<tr>
+				
+				<td><?php echo $user->identificacion; ?></td>
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
 				<td><?php echo $user->address1; ?></td>
+				<td><?php echo $user->company; ?></td>
+
 				<td><?php echo $user->email1; ?></td>
 				<td><?php echo $user->phone1; ?></td>
+				<td><?php echo $user->phone2; ?></td>
+				<!-- <td><?php echo $user->address1; ?></td> -->
 				<td style="width:130px;">
 				<a href="index.php?view=editprovider&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?view=delprovider&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>

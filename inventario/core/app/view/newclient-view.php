@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="" class="control-label">Tipo Identificación</label>
@@ -40,7 +40,7 @@
                         <textarea name="direccion" cols="30" class="form-control" rows="2"></textarea>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 <div class="row">
 	<div class="col-md-12">
@@ -85,7 +85,7 @@
       <input type="text" name="phone1" class="form-control" id="phone1" placeholder="Telefono">
     </div>
   </div>
-	
+
 
 
 

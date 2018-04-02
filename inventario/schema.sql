@@ -1,5 +1,5 @@
-create database invps593;
-use invps593;
+create database invps1;
+use invps1;
 set sql_mode='';
 
 create table user(
@@ -56,13 +56,14 @@ person kind
 */
 create table person(
 	id int not null auto_increment primary key,
+	identificacion varchar(255),
 	image varchar(255),
 	name varchar(255),
 	lastname varchar(50),
-	ruc varchar(50),
 	company varchar(50),
 	address1 varchar(50),
 	phone1 varchar(50),
+	phone2 varchar(50),
 	email1 varchar(50),
 	kind int,
 	created_at datetime,
