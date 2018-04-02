@@ -7,7 +7,7 @@
 			<div class="form-group">
 		    <label for="inputEmail1" class="col-lg-2 control-label">Cedula o RUc*</label>
 		    <div class="col-md-6">
-		      <input type="text" name="name" class="form-control" id="identificacion" placeholder="Nombre">
+		      <input type="text" name="identificacion" class="form-control" id="name" placeholder="Nombre">
 		    </div>
 		  </div>
   <div class="form-group">
@@ -25,7 +25,7 @@
 	<div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Empresa*</label>
     <div class="col-md-6">
-      <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Apellido">
+      <input type="text" name="company" required class="form-control" id="lastname" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
@@ -50,7 +50,7 @@
 	<div class="form-group">
 		<label for="inputEmail1" class="col-lg-2 control-label">celular*</label>
 		<div class="col-md-6">
-			<input type="text" name="phone1" class="form-control" id="phone2" placeholder="Telefono">
+			<input type="text" name="phone2" class="form-control" id="phone2" placeholder="Telefono">
 		</div>
 	</div>
 

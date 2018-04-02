@@ -141,7 +141,7 @@
             </li>
 
 
-            <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+            <!-- <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li> -->
 
             <li class="treeview">
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>

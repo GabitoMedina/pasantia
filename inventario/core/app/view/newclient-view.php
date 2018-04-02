@@ -49,7 +49,7 @@
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=addclient" role="form">
 
 			<div class="form-group">
-		    <label for="inputEmail1" class="col-lg-2 control-label">Identificación*</label>
+		    <label for="inputEmail1" class="col-lg-2 control-label">CI o RUc*</label>
 		    <div class="col-md-6">
 		      <input type="text" name="identificacion" class="form-control" id="name" placeholder="identificacion">
 		    </div>

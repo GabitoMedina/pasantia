@@ -75,7 +75,7 @@ if($px<=$npaginas):
 	<?php foreach($curr_products as $product):?>
 	<tr>
 		<td><?php echo $product->barcode; ?></td>
-		//nuevo
+		
 		<td><?php echo $product->person_id; ?></td>
 
 
@@ -88,7 +88,7 @@ if($px<=$npaginas):
 		<td>$ <?php echo number_format($product->price_in,2,'.',','); ?></td>
 		<td>$ <?php echo number_format($product->price_dist,2,'.',','); ?></td>
 		<td>$ <?php echo number_format($product->price_out,2,'.',','); ?></td>
-		//analisar si no
+
 		<td><?php if($product->category_id!=null){echo $product->getCategory()->name;}else{ echo "<center>----</center>"; }  ?></td>
 		<td><?php echo $product->inventary_min; ?></td>
 		<td><?php if($product->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
