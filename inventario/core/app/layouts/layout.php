@@ -118,8 +118,19 @@
             <li class="treeview">
               <a href="#"><i class='fa fa-usd'></i> <span>Vender</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=sell">Productos</a></li>
-                <li><a href="./?view=sell1">Productos1</a></li>
+                <!-- <li><a href="./?view=sell">Productos</a></li> -->
+                    <li class="treeview">
+                      <a href="#"><i class=''></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                      <ul class="treeview-menu">
+                        <li><a href="./?view=sell">Factura</a></li>
+                        <!-- <li><a href="./?view=sell1">Productos1</a></li> -->
+                        <li><a href="./?view=sell1">Nota de Venta</a></li>
+
+
+                      </ul>
+                    </li>
+                <!-- <li><a href="./?view=sell1">Productos1</a></li> -->
+                <!-- <li><a href="./?view=notesellfact">Productos1</a></li> -->
                 <li><a href="./?view=services">Servicios</a></li>
 
               </ul>

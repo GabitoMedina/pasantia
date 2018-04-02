@@ -160,6 +160,7 @@ $clients = PersonData::getClients();
       <div class="checkbox">
         <label>
 		<a href="index.php?view=clearcart" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+		<a href="index.php?view=sellnote" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Nota Venta</a>
         <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-usd"></i><i class="glyphicon glyphicon-usd"></i> Finalizar Venta</button>
         </label>
       </div>
