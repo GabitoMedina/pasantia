@@ -1,5 +1,5 @@
-create database invps1;
-use invps1;
+create database inventio1;
+use inventio1;
 set sql_mode='';
 
 create table user(
@@ -24,29 +24,43 @@ create table category(
 	description text,
 	created_at datetime
 );
+create table garantia (
+	id int not null auto_increment primary key,
+	description text,
+	is_active boolean default 1,
+	created_at datetime
+
+);
 
 create table product(
 	id int not null auto_increment primary key,
 	image varchar(255),
-	barcode varchar(50),
 	name varchar(50),
 	description text,
 	inventary_min int default 10,
 	price_in float,
-	price_dist float,
+	pvp float,
 	price_out float,
 	unit varchar(255),
 	presentation varchar(255),
+	garantia_id int,
 	user_id int,
 	category_id int,
-	person_id int,
 	created_at datetime,
 	is_active boolean default 1,
-
 	foreign key (category_id) references category(id),
-	foreign key (user_id) references user(id)
+	foreign key (user_id) references user(id),
+	foreign key (garantia_id) references garantia(id)
+);
+
+create table registerSerie(
+	id int not null auto_increment primary key,
+	serie varchar (255),
+	product_id int,
+	created_at datetime,
 
 
+	foreign key (product_id) references product (id)
 );
 
 /*
@@ -56,23 +70,19 @@ person kind
 */
 create table person(
 	id int not null auto_increment primary key,
-	identificacion varchar(255),
 	image varchar(255),
+	identficacion int NOT NULL UNIQUE,
 	name varchar(255),
 	lastname varchar(50),
 	company varchar(50),
 	address1 varchar(50),
+	address2 varchar(50),
 	phone1 varchar(50),
 	phone2 varchar(50),
 	email1 varchar(50),
+	email2 varchar(50),
 	kind int,
-	created_at datetime,
-	product_id int,
-	product_barcode varchar(50),
-
-
-	foreign key (product_id) references product(id)
-
+	created_at datetime
 );
 
 
@@ -84,6 +94,14 @@ create table operation_type(
 insert into operation_type (name) value ("entrada");
 insert into operation_type (name) value ("salida");
 
+	create table typesell(
+		id int not null auto_increment primary key,
+		factura varchar(50),
+		notaventa varchar (50),
+		created_at datetime
+	);
+
+
 create table box(
 	id int not null auto_increment primary key,
 	created_at datetime
@@ -92,6 +110,7 @@ create table box(
 
 create table sell(
 	id int not null auto_increment primary key,
+	typesell_id int,
 	person_id int ,
 	user_id int ,
 	operation_type_id int default 2,
@@ -105,6 +124,7 @@ create table sell(
 	foreign key (operation_type_id) references operation_type(id),
 	foreign key (user_id) references user(id),
 	foreign key (person_id) references person(id),
+	foreign key (typesell_id) references typesell(id),
 	created_at datetime
 );
 
@@ -120,6 +140,30 @@ create table operation(
 	foreign key (sell_id) references sell(id)
 );
 
+
+create table proforma(
+	id int not null auto_increment primary key,
+	codigo varchar (255) default null,
+	person_id int,
+	garantia_id int,
+	created_at datetime,
+
+	foreign key (person_id)references person(id),
+	foreign key (garantia_id) references garantia(id)
+
+);
+create table detalleproforma(
+	id int not null auto_increment primary key,
+	cantidad int,
+	detalle text,
+	product_id int,
+	proforma_id int,
+	created_at datetime,
+
+	foreign key (product_id) references product(id),
+	foreign key (proforma_id) references proforma (id)
+
+);
 /*
 configuration kind
 1.- Boolean
