@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -114,6 +115,7 @@
             <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
             <!-- <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li> -->
             <li><a href="./index.php?view=proform"><i class='fa fa-file-archive-o'></i> <span>Proformas</span></a></li>
+            <li><a href="./index.php?view=proforma"><i class='fa fa-file-archive-o'></i> <span>Proformas1</span></a></li>
 
             <li class="treeview">
               <a href="#"><i class='fa fa-usd'></i> <span>Vender</span> <i class="fa fa-angle-left pull-right"></i></a>
