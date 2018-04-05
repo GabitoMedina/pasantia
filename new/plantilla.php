@@ -1,8 +1,8 @@
-<?php
-include 'plantilla.php'
+<!-- <?php
+include 'plantilla.php';
 require 'fpfp181/fpdf.php';
 
-class PDF extends fpdf
+class PDF extends FPDF
 {
   function Header()
   {
@@ -19,10 +19,10 @@ class PDF extends fpdf
   {
     $this->SetY(-15);
     $this->SetFont ('Arial','I', 8);
-    $this->Cell(0,10.'Pag'$this->PageNo().'/{nb}',0,1,'C');
+    $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
 
-    $pdf->AddPage();
-    $pdf->Output();
+    // $pdf->AddPage();
+    // $pdf->Output();
 
 
   }
@@ -30,7 +30,13 @@ class PDF extends fpdf
 
 
 }
+// Creación del objeto de la clase heredada
+$pdf = new PDF();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','',12);
+for($i=1;$i<=40;$i++)
+    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
+$pdf->Output();
 
-
-
- ?>
+ ?> -->
