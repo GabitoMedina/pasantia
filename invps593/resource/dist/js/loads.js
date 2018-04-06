@@ -28,6 +28,7 @@ function getURL(url) {
             break;
         case"_servicio":
             return "servidor/sServicio.php";
+            break;
     }
 }
 
@@ -49,6 +50,17 @@ function loadCliente(params) {
             accion: "list"
         }, params.data),
         url: getURL("_cliente")
+    };
+    params.success(getJson(json_data));
+}
+
+function loadProveedor(params) {
+    json_data = {
+        data: $.extend({}, {
+            op: "proveedor",
+            accion: "list"
+        }, params.data),
+        url: getURL("_proveedor")
     };
     params.success(getJson(json_data));
 }

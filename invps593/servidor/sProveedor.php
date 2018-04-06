@@ -1,5 +1,5 @@
 <?php
-// 26-03-10 provvedodr
+
 require_once __DIR__ . "/../init.php";
 
 include_once SITE_ROOT . '/MVC/Model/ProveedorDaoImp.php';
@@ -51,8 +51,8 @@ switch ($accion) {
     case "delete":
         switch ($op) {
             case "proveedor":
-                $Prveedor = new Cliente();
-                $Prveedor->Id =  $_POST["ids"];
+                $Proveedor = new Proveedor();
+                $Proveedor->Id =  $_POST["ids"];
                 ProveedorDaoImp::delete($Proveedor);
                 break;
         }

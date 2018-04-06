@@ -7,6 +7,7 @@ class Proveedor extends ModelSQL {
     public $Nombres;
     public $TipoIdentificacion;
     public $Identificacion;
+    public $Empresa;
     public $Telefono;
     public $Celular;
     public $Email;

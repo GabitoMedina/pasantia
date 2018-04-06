@@ -1,8 +1,8 @@
 <?php
 session_start();
-// if (!isset($_SESSION["login"])) {
-//     header("location: login.php");
-// }
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+}
 
 $user = $_SESSION["login"]["user"];
 //var_dump($user);
@@ -101,13 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>V</b>PS</span>
                     <!-- logo for regular state and mobile devices -->
-                    <!--<span class="logo-lg"><b>Brau</b>Pe<b>Comp</b></span>-->
-                    <!-- <h1>
-                      <a href="index.php">
-                        <span>
-                          <i class="fa fa-server"></i>"VPS593"</span>".COM"
-                      </a>
-                    </h1> -->
+
                     <span class="logo-lg"><?php echo $datos["nombre"]; ?></span>
                 </a>
 
@@ -139,9 +133,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                       <!-- logo circulo imagen cerrrar sesion -->
 
-                                      <i class="fa fa-user-circle-o" style="font-size:36px"></i>
+                                      <!-- <i class="fa fa-user-circle-o" style="font-size:36px"></i> -->
 
-                                        <!-- <img src="<?php echo $logo; ?>" class="img-circle" alt="User Image"> -->
+                                        <img src="<?php echo $logo; ?>" class="img-circle" alt="User Image">
 
                                         <p>
                                           <!-- 4-4 -->
@@ -173,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <!-- <img src="<?php echo $logo; ?>" width="160"  alt="User Image"> -->
+                            <img src="<?php echo $logo; ?>" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p> <?php echo $user["u"]; ?> </p>
@@ -185,21 +179,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">Navegación Principal</li>
-                        <!-- Optionally, you can add icons to the links -->
-                        <a href="MVC/View/App/usuario.php">
-                            <i class="fa fa-user-circle"></i> <span>Usuarios</span>
-                        </a>
-                    </li>
-
-                    <li >
-                        <a href="MVC/View/Configure/configure.php">
-                            <i class="fa fa-gears"></i> <span>Configuración</span>
-                        </a>
-                    </li>
 
                         <?php if($user["idrol"] == "1"){ ?>
 
-
+                        <li>
                             <a href="MVC/View/App/usuario.php">
                                 <i class="fa fa-user-circle"></i> <span>Usuarios</span>
                             </a>
@@ -212,10 +195,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <?php } ?>
 
-                        <li>
-                          <a href="#">
-                            <i class='fa fa-home'></i> <span>Inicio</span></a>
-                        </li>
+                        <!-- <li>
+                          <a href="index.php">
+                            <i class='fa fa-home'></i> <span>Inicio</span>
+                          </a>
+                        </li> -->
 
                         <li >
                             <a href="MVC/View/Proform/proforma.php">
@@ -251,12 +235,71 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </ul>
                         </li>
 
-                        <li><a href="#"><i class='fa fa-cube'></i> <span>Caja</span></a></li>
-                        <li><a href="#"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
-                        <li><a href="MVC/View/Product/producto.php"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+                        <!-- <li><a href="#"><i class='fa fa-cube'></i> <span>Caja</span></a></li> -->
+                        <!-- <li><a href="#"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li> -->
+                        <!-- <li><a href="MVC/View/Product/producto.php"><i class='fa fa-glass'></i> <span>Productos</span></a></li> -->
+
+
+                        <li class="treeview">
+                          <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+                            <li >
+                                <a href="MVC/View/Client/cliente.php">
+                                    <i class="fa fa-user-circle-o"></i> <span>Clientes</span>
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="MVC/View/Proveedores/proveedor.php">
+                                    <i class="fa fa-truck"></i> <span>Proveedor</span>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="MVC/View/Catalog/garantia.php">
+                                    <i class="fa fa-handshake-o"></i> <span>Garantia</span>
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="MVC/View/Categoria/categoria.php">
+                                    <i class="fa fa-cog"></i> <span>Categoria</span>
+                                </a>
+                            </li>
 
 
 
+                          </ul>
+                        </li>
+
+                        <li class="treeview">
+                          <a href="#"><i class='fa fa-glass'></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+                            <li >
+                                <a href="MVC/View/Product/producto.php">
+                                    <i class=""></i> <span>Listar</span>
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="MVC/View/NewProduct/newproduct.php">
+                                    <i class=""></i> <span>Agregar Nuevo</span>
+                                </a>
+                            </li>
+                            <li><a href="MVC/View/Abastecer/abastecer.php">Abastecer</a></li>
+
+                          </ul>
+                        </li>
+
+                        <li class="treeview">
+                          <a href="MVC/View/Reporte/reporte.php"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                              <!-- <li><a href="#"><i class="fa fa-area-chart"></i>Inventario</a></li> -->
+                              <li><a href="#"><i class="fa fa-shopping-cart"></i>Ventas</a></li>
+                            </ul>
+                        </li>
+
+
+<!--
                         <li class="treeview">
                           <a href="#"><i class='fa fa-area-chart'></i> <span>Inventario</span> <i class="fa fa-angle-left pull-right"></i></a>
                           <ul class="treeview-menu">
@@ -269,77 +312,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li><a href="#">Abastecer</a></li>
                             <li><a href="#">Abastecimientos</a></li>
                           </ul>
-                        </li>
-
-                        <li >
+                        </li> -->
 
 
 
-                        <li class="treeview">
-              <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li class="treeview">
-                  <a href="#"><i class='fa fa-glass'></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li >
-                        <a href="MVC/View/NewProduct/newproduct.php">
-                            <i class=""></i> <span>Agregar Nuevo</span>
-                        </a>
-                    </li>
-                    <li><a href="MVC/View/Abastecer/abastecer.php">Abastecer</a></li>
 
-                  </ul>
-                </li>
 
-                <li >
-                <li >
-                    <a href="MVC/View/Client/cliente.php">
-                        <i class="fa fa-users"></i> <span>Clientes</span>
-                    </a>
-                </li>
 
-                <li><a href="MVC/View/Proveedores/proveedor.php">
-                  <i class='fa fa-truck'></i>Proveedores</a></li>
-              <li><a href="MVC/View/Product/producto.php"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
-                <li >
-                    <a href="MVC/View/Catalog/garantia.php">
-                        <i class="fa fa-handshake-o"></i> <span>Garantia</span>
-                    </a>
-                </li>
-                <li >
-                    <a href="MVC/View/Categoria/categoria.php">
-                        <i class="fa fa-handshake-o"></i> <span>Categoria</span>
-                    </a>
-                </li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#"><i class='fa fa-area-chart'></i> <span>Inventario</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li >
-                    <a href="MVC/View/Product/producto.php">
-                        <i class=""></i> <span>Productos</span>
-                    </a>
-                </li>
-                <li><a href="#">Inventario</a></li>
-                <li><a href="#">Abastecer</a></li>
-                <li><a href="#">Abastecimientos</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="MVC/View/Reporte/reporte.php"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu"><li><a href="#">Inventario</a></li>
-                  <li><a href="#">Ventas</a></li>
-                </ul>
-            </li>
 
-            <li class="treeview">
-              <a href="MVC/View/Reporte/reporte.php"><i class='fa fa-file-text-o'></i> <span>Configuración</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                  <li><a href="#">Nuevo Proveedor</a></li>
-                  <li><a href="#">Ventas</a></li>
-                </ul>
-            </li>
+
+
+
+
+
+
 
                 </section>
                 <!-- /.sidebar -->

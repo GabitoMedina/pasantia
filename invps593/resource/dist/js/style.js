@@ -113,7 +113,7 @@ function formatInputMask(value) {
 
 var TablePaginationDefault = {
     //height: 400,
-    pageSize: 5,
+    pageSize: 13,
     search: true,
     pageList: [5, 10, 15, 20],
     cache: false,
@@ -168,13 +168,13 @@ function deletes(values) {
 }
 
 $(function () {
-    
+
     $("#cerrarSesion").click(function(e){
         e.preventDefault();
         $.post("servidor/sApp.php",{accion: "close"},function(){
             location.href = "login.php";
         });
-        
+
     });
 
 
@@ -275,7 +275,7 @@ $(function () {
 
     /*$(document).on("click", "button[name='btn_del_individual']", function (e) {
      div_id = $(this).closest("div[toolbar]").attr("id");
-     
+
      //alert(div_id);
      tableSelect = $("table[data-toolbar='#" + div_id + "']");
      deleteIndividual(tableSelect);
