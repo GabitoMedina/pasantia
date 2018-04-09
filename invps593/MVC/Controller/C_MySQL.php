@@ -29,7 +29,7 @@ final class C_MySQL {
         //$this->mysqli = new mysqli("localhost", "kbsg", "kbsg", "braupecomp");
         //$this->mysqli = new mysqli("localhost", "root", "", "braupecomp");
         //$this->mysqli = new mysqli("localhost", "costadro_brau", "braupecomp", "costadro_braupecomp");
-        $this->mysqli = new mysqli("localhost", "root", "", "inventario6");
+        $this->mysqli = new mysqli("localhost", "root", "", "invent6");
         if ($this->mysqli->connect_errno) {
             echo "Fallo al conectar a MySQL: (" . $this->mysqli->connect_errno . ") " . $this->mysqli->connect_error;
         }

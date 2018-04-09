@@ -25,11 +25,11 @@
             <thead>
                 <tr>
                     <th data-field="state" data-checkbox="true" ></th>
-                    <th data-field="codigo" class="col-md-1">N° Proforma</th>
+                    <th data-field="codigo" class="col-md-1">N° Servicio</th>
                     <th data-field="fecha" class="col-md-2" data-formatter="defaultFecha">Fecha</th>
                     <!--<th data-field="ganancia" class="col-md-1">Ganancia</th>-->
                     <th data-field="nombres">Cliente</th>
-                    <th data-field="productos">Cant. Productos</th>
+                    <th data-field="productos">....</th>
                     <th data-field="accion" class="col-md-1" data-align="center" data-formatter="BtnAccion" data-events="defaultEvent" >Acción</th>
                 </tr>
             </thead>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="" class="control-label">N° Proforma</label>
+                        <label for="" class="control-label">N° Servicio</label>
                         <input name="codigo" type="text" class="form-control" readonly value="0">
                     </div>
                 </div>
@@ -71,13 +71,33 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="" class="control-label">$ Valor Envio</label>
-                        <input tipo="decimal" myDecimal name="envio" type="text" class="form-control" value="0">
+                        <label for="" class="control-label">Equipo de Empresa</label>
+                        <input tipo="text"  name="empresa" type="text" class="form-control" value="no">
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="" class="control-label">Producto</label>
+                        <input tipo="text"  name="producto" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="" class="control-label">Marca</label>
+                        <input tipo="text"  name="marcaE" type="text" class="form-control" >
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="" class="control-label">Modelo</label>
+                        <input tipo="text"  name="modeloE" type="text" class="form-control" >
+                    </div>
+                </div>
+           
+                <!--
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="" class="control-label">Garantia</label>
+                        <label for="" class="control-label">Producto</label>
                         <div tipo data-fn="loadGarantia" class="row">
                             <div class="col-md-12">
                                 <div class="pull-right">
@@ -89,9 +109,29 @@
                         </div>
 
                     </div>
+                </div>-->
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="" class="control-label">Tipo de respaldo</label>
+                        <input tipo="text"  name="trespaldo" type="text" class="form-control" >
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="" class="control-label">Respaldo</label>
+                        <input tipo="text"  name="respaldo" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="" class="control-label">Programas</label>
+                        <input tipo="text"  name="programas" type="text" class="form-control" >
+                    </div>
                 </div>
             </div>
-
             <div class="row">
                 <div toolbar id="toolbarDetalle" class="btn-group">
                     <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-new" data-tab="#detalleProforma">-->
@@ -117,11 +157,11 @@
                             <tr>
                                 <th data-field="state" data-checkbox="true"></th>
                                 <th data-formatter="rowCount">N°</th>
-                                <th data-field="producto" data-formatter="defaultDescripcion" data-events="event_imask" >Producto</th>
-                                <th data-field="cantidad" class="col-md-1" data-formatter="imask" data-events="event_imask" >Cantidad</th>
+                                <th data-field="producto" data-formatter="defaultDescripcion" data-events="event_imask" >Nombre</th>
+                                <th data-field="cantidad" class="col-md-1" data-formatter="imask" data-events="event_imask" >Marca</th>
                                 <!--<th data-field="precioProveedor" class="col-md-2"  >$ Proveedor</th>-->
-                                <th data-field="precioProveedor" class="col-md-1" data-formatter="imask" data-events="event_imask">$ Proveedor</th>
-                                <th data-field="precioComision" class="col-md-1" data-formatter="imask" data-events="event_imask" >$ Comisión</th>
+                                <th data-field="precioProveedor" class="col-md-1" data-formatter="imask" data-events="event_imask"> Modelo</th>
+                                <th data-field="precioComision" class="col-md-1" data-formatter="imask" data-events="event_imask" >N° Serie</th>
                                 <!--<th data-field="accion" class="col-md-1" data-align="center" data-formatter="defaultAccion" data-events="editAccion" >Accion</th>-->
                             </tr>
                         </thead>
@@ -133,20 +173,16 @@
                 <div class="col-md-12">
                     <div class="pull-right" style="display: flex; align-items: flex-end;flex-direction: column;">
                         <div class="form-inline">
-                            <label class="control-label">Subtotal</label>
+                            <label class="control-label">Costo</label>
                             <input id="txtSubtotal" readonly type="text" class="form-control input-sm" style="text-align: right;">
                         </div>
                         <div class="form-inline">
-                            <label class="control-label">Valor Comisión</label>
+                            <label class="control-label">Abono</label>
                             <input tipo="decimal" myDecimal type="text" name='ganancia' class="form-control input-sm" style="text-align: right;">
                         </div>
                         <div class="form-inline">
-                            <label class="control-label">Total Comisión</label>
+                            <label class="control-label">Saldo</label>
                             <input id="txtComision" readonly type="text" class="form-control input-sm" style="text-align: right;">
-                        </div>
-                        <div class="form-inline">
-                            <label class="control-label">Total</label>
-                            <input id="txtTotal" readonly type="text" class="form-control input-sm" style="text-align: right;">
                         </div>
                     </div>
                     <div class="pull-left">
@@ -189,22 +225,22 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="" class="control-label">Producto</label>
-                                    <input name="producto" type="text" class="form-control" required>
+                                    <label for="" class="control-label">Nombre</label>
+                                    <input name="nombre" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="control-label">Cantidad</label>
-                                    <input name="cantidad" type="text" class="form-control" required myDecimal style="text-align: right;" >
+                                    <label for="" class="control-label">Marca</label>
+                                    <input name="marca" type="text" class="form-control" required  style="text-align: right;" >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="" class="control-label">$ Proveedor</label>
-                                    <input name="precioProveedor" type="text" class="form-control" required myDecimal style="text-align: right;">
+                                    <label for="" class="control-label">Modelo</label>
+                                    <input name="modelo" type="text" class="form-control" required  style="text-align: right;">
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="control-label">$ Comisión</label>
-                                    <input name="precioComision" type="text" class="form-control" required myDecimal style="text-align: right;">
+                                    <label for="" class="control-label">N° Serie</label>
+                                    <input name="serie" type="text" class="form-control" required  style="text-align: right;">
                                 </div>
                             </div>
                         </div>
@@ -308,7 +344,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
-                        Detalle - Productos
+                        Detalle - Servicio
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -317,10 +353,10 @@
                         >
                         <thead>
                             <tr>
-                                <th data-field="cantidad" class="col-md-1" data-align="center">Cantidad</th>
+                                <th data-field="cantidad" class="col-md-1" data-align="center">Nombre</th>
                                 <th data-field="producto">Producto</th>
-                                <th data-field="precioProveedor" class="col-md-1" data-align="center" >$ Proveedor</th>
-                                <th data-field="precioComision" class="col-md-1" data-align="center">$ Comision</th>
+                                <th data-field="precioProveedor" class="col-md-1" data-align="center" >$ Costo</th>
+                                <th data-field="precioComision" class="col-md-1" data-align="center">$ Saldo</th>
                             </tr>
                         </thead>
                     </table>
